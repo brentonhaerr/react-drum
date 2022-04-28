@@ -26,22 +26,6 @@ class AudioPlayer extends Component {
         <audio src={snarefx} id="snare"></audio>
         <audio src={tommid1fx} id="tom_mid_1"></audio>
         <audio src={tommid2fx} id="tom_mid_2"></audio>
-
-        <div className="container-lg">
-          <div className="row justify-content-center">
-            <div className="col-10">
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("Q") }}>Q</button>
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("W") }}>W</button>
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("E") }}>E</button>
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("A") }}>A</button>
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("S") }}>S</button>
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("D") }}>D</button>
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("Z") }}>Z</button>
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("X") }}>X</button>
-              <button className="btn btn-secondary mx-1" onClick={() => { this.props.playAudio("") }}>C</button>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }
