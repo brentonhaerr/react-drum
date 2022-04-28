@@ -15,12 +15,6 @@ class AudioPlayer extends Component {
 
   state = {}
 
-  playAudio(audio_element_id) {
-    document.getElementById(audio_element_id).load();
-    document.getElementById(audio_element_id).play();
-
-  }
-
   render() {
     return (
       <div>
@@ -32,21 +26,6 @@ class AudioPlayer extends Component {
         <audio src={snarefx} id="snare"></audio>
         <audio src={tommid1fx} id="tom_mid_1"></audio>
         <audio src={tommid2fx} id="tom_mid_2"></audio>
-        <div className="container-lg">
-          <div className="row">
-            <div className="col-10">
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("tom_high_1")}}>Q</button>
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("tom_high_2")}}>W</button>
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("cymbal_1")}}>E</button>
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("cymbal_2")}}>A</button>
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("kick")}}>S</button>
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("snare")}}>D</button>
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("tom_mid_1")}}>Z</button>
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("tom_mid_2")}}>X</button>
-              <button className="btn btn-secondary mx-1" onClick={() => {this.playAudio("")}}>C</button>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }
