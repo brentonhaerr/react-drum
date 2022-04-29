@@ -17,55 +17,55 @@ class AudioContextProvider extends Component {
     sounds: {
       hihat: {
         key: "Q",
-        url: "",
+        source: {cymballight1fx},
         id: "hihat",
         name: "Hi-hat"
       },
       cymbal1: {
         key: "W",
-        url: "",
+        source: {cymballight2fx},
         id: "cymbal1",
         name: "Cymbal 1"
       },
       cymbal2: {
         key: "E",
-        url: "",
+        source: {tomhigh1fx},
         id: "cymbal2",
         name: "Cymbal 2"
       },
       cymbal3: {
         key: "D",
-        url: "",
+        source: {tomhigh2fx},
         id: "cymbal3",
         name: "Cymbal 3"
       },
       snare: {
         key: "Z",
-        url: "",
+        source: {snarefx},
         id: "snare",
         name: "Snare"
       },
       bass: {
         key: "X",
-        url: "",
+        source: {kickfx},
         id: "bass",
         name: "Bass"
       },
       tom1: {
         key: "A",
-        url: "",
+        source: {tommid1fx},
         id: "tom1",
         name: "Tom 1"
       },
       tom2: {
         key: "S",
-        url: "",
+        source: {tommid2fx},
         id: "tom2",
         name: "Tom 2"
       },
       tom3: {
         key: "C",
-        url: "",
+        source: {tommid1fx},
         id: "tom3",
         name: "Tom 3"
       }
