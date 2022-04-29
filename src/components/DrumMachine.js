@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AudioPlayer from './AudioPlayer';
+import Display from './Display';
 import DrumKeyboard from './DrumKeyboard';
 import DrumMap from './DrumMap';
 
@@ -44,10 +45,12 @@ class DrumMachine extends Component {
   state = {}
   render() {
     return (
-      <div>
+      <div id="drum-machine">
+        <Display />
         <AudioPlayer playAudio={this.playAudio} />
         <DrumMap playAudio={this.playAudio} />
         <DrumKeyboard playAudio={this.playAudio} />
+        
       </div>
     );
   }
