@@ -13,70 +13,78 @@ import tommid2fx from '../assets/tom-mid-low-2.mp3';
 export const AudioContext = createContext();
 
 class AudioContextProvider extends Component {
-  state = { 
-    hihat: {
-      key: "Q",
-      url: "",
-      id: "",
-      name: "Hi-hat"
-    },
-    cymbal1: {
-      key: "W",
-      url: "",
-      id: "",
-      name: "Cymbal 1"
-    },
-    cymbal2: {
-      key: "E",
-      url: "",
-      id: "",
-      name: "Cymbal 2"
-    },
-    cymbal3: {
-      key: "D",
-      url: "",
-      id: "",
-      name: "Cymbal 3"
-    },
-    snare: {
-      key: "Z",
-      url: "",
-      id: "",
-      name: "Snare"
-    },
-    bass: {
-      key: "X",
-      url: "",
-      id: "",
-      name: "Bass"
-    },
-    tom1: {
-      key: "A",
-      url: "",
-      id: "",
-      name: "Tom 1"
-    },
-    tom2: {
-      key: "S",
-      url: "",
-      id: "",
-      name: "Tom 2"
-    },
-    tom3: {
-      key: "C",
-      url: "",
-      id: "",
-      name: "Tom 3"
+  state = {
+    sounds: {
+      hihat: {
+        key: "Q",
+        url: "",
+        id: "hihat",
+        name: "Hi-hat"
+      },
+      cymbal1: {
+        key: "W",
+        url: "",
+        id: "cymbal1",
+        name: "Cymbal 1"
+      },
+      cymbal2: {
+        key: "E",
+        url: "",
+        id: "cymbal2",
+        name: "Cymbal 2"
+      },
+      cymbal3: {
+        key: "D",
+        url: "",
+        id: "cymbal3",
+        name: "Cymbal 3"
+      },
+      snare: {
+        key: "Z",
+        url: "",
+        id: "snare",
+        name: "Snare"
+      },
+      bass: {
+        key: "X",
+        url: "",
+        id: "bass",
+        name: "Bass"
+      },
+      tom1: {
+        key: "A",
+        url: "",
+        id: "tom1",
+        name: "Tom 1"
+      },
+      tom2: {
+        key: "S",
+        url: "",
+        id: "tom2",
+        name: "Tom 2"
+      },
+      tom3: {
+        key: "C",
+        url: "",
+        id: "tom3",
+        name: "Tom 3"
+      }
     }
-   }
+  }
 
-  render() { 
+  playAudio = (audio_element) => {
+    console.log("Play audio: "+audio_element.name)
+    document.getElementById(audio_element.id).load();
+    document.getElementById(audio_element.id).play();
+  }
+
+  render() {
     return (
-      <AudioContext.Provider value={this.state}>
+      <AudioContext.Provider value={{...this.state, playAudio: this.playAudio}}>
         {this.props.children}
       </AudioContext.Provider>
     );
   }
 }
- 
+
 export default AudioContextProvider;

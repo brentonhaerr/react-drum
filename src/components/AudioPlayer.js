@@ -20,7 +20,7 @@ class AudioPlayer extends Component {
       <div>
         <audio src={tomhigh1fx} id="tom_high_1"></audio>
         <audio src={tomhigh2fx} id="tom_high_2"></audio>
-        <audio src={cymballight1fx} id="cymbal_1"></audio>
+        <audio src={cymballight1fx} id="hihat"></audio>
         <audio src={cymballight2fx} id="cymbal_2"></audio>
         <audio src={kickfx} id="kick"></audio>
         <audio src={snarefx} id="snare"></audio>
