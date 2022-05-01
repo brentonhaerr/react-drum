@@ -73,16 +73,28 @@ class AudioContextProvider extends Component {
   }
 
   playAudio = (audio_element_key) => {
-    let audio_element = this.state.sounds.filter((elem) => { return elem.key==audio_element_key })[0];
+    let audio_element = this.state.sounds.filter((elem) => { return elem.key == audio_element_key })[0];
     console.log("Play audio: " + audio_element.name)
     document.getElementById(audio_element.id).load();
     document.getElementById(audio_element.id).play();
     document.getElementById("display").innerHTML = audio_element.name;
   }
 
+  generateButtons = () => {
+    return (
+      this.state.sounds.map(sound => {
+        return (
+          <button id={sound.key} className="drum-pad btn btn-secondary mx-1" onClick={() => { this.playAudio(sound.key) }}>
+            {sound.key}
+            <audio src={sound.source} id={sound.id}></audio>
+          </button>
+        )
+      }))
+  }
+
   render() {
     return (
-      <AudioContext.Provider value={{ ...this.state, playAudio: this.playAudio }}>
+      <AudioContext.Provider value={{ ...this.state, playAudio: this.playAudio, generateButtons: this.generateButtons }}>
         {this.props.children}
       </AudioContext.Provider>
     );
