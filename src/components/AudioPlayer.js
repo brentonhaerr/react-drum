@@ -18,14 +18,14 @@ class AudioPlayer extends Component {
   render() {
     return (
       <div>
-        <audio src={tomhigh1fx} id="tom_high_1"></audio>
-        <audio src={tomhigh2fx} id="tom_high_2"></audio>
-        <audio src={cymballight1fx} id="cymbal_1"></audio>
-        <audio src={cymballight2fx} id="cymbal_2"></audio>
-        <audio src={kickfx} id="kick"></audio>
+        <audio src={tomhigh1fx} id="tom1"></audio>
+        <audio src={tomhigh2fx} id="tom2"></audio>
+        <audio src={cymballight1fx} id="hihat"></audio>
+        <audio src={cymballight2fx} id="cymbal2"></audio>
+        <audio src={kickfx} id="bass"></audio>
         <audio src={snarefx} id="snare"></audio>
-        <audio src={tommid1fx} id="tom_mid_1"></audio>
-        <audio src={tommid2fx} id="tom_mid_2"></audio>
+        <audio src={tommid1fx} id="tom3"></audio>
+        <audio src={tommid2fx} id="cymbal1"></audio>
       </div>
     );
   }
