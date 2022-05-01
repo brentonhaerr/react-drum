@@ -76,6 +76,7 @@ class AudioContextProvider extends Component {
     console.log("Play audio: "+audio_element.name)
     document.getElementById(audio_element.id).load();
     document.getElementById(audio_element.id).play();
+    document.getElementById("display").innerHTML = audio_element.name;
   }
 
   render() {
