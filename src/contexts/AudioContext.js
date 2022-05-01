@@ -14,66 +14,67 @@ export const AudioContext = createContext();
 
 class AudioContextProvider extends Component {
   state = {
-    sounds: {
-      hihat: {
+    sounds: [
+      {
         key: "Q",
-        source: {cymballight1fx},
+        source: { cymballight1fx },
         id: "hihat",
         name: "Hi-hat"
       },
-      cymbal1: {
+      {
         key: "W",
-        source: {cymballight2fx},
+        source: { cymballight2fx },
         id: "cymbal1",
         name: "Cymbal 1"
       },
-      cymbal2: {
+      {
         key: "E",
-        source: {tomhigh1fx},
+        source: { tomhigh1fx },
         id: "cymbal2",
         name: "Cymbal 2"
       },
-      cymbal3: {
+      {
         key: "D",
-        source: {tomhigh2fx},
+        source: { tomhigh2fx },
         id: "cymbal3",
         name: "Cymbal 3"
       },
-      snare: {
+      {
         key: "Z",
-        source: {snarefx},
+        source: { snarefx },
         id: "snare",
         name: "Snare"
       },
-      bass: {
+      {
         key: "X",
-        source: {kickfx},
+        source: { kickfx },
         id: "bass",
         name: "Bass"
       },
-      tom1: {
+      {
         key: "A",
-        source: {tommid1fx},
+        source: { tommid1fx },
         id: "tom1",
         name: "Tom 1"
       },
-      tom2: {
+      {
         key: "S",
-        source: {tommid2fx},
+        source: { tommid2fx },
         id: "tom2",
         name: "Tom 2"
       },
-      tom3: {
+      {
         key: "C",
-        source: {tommid1fx},
+        source: { tommid1fx },
         id: "tom3",
         name: "Tom 3"
       }
-    }
+    ]
   }
 
-  playAudio = (audio_element) => {
-    console.log("Play audio: "+audio_element.name)
+  playAudio = (audio_element_key) => {
+    let audio_element = this.state.sounds.filter((elem) => { return elem.key==audio_element_key })[0];
+    console.log("Play audio: " + audio_element.name)
     document.getElementById(audio_element.id).load();
     document.getElementById(audio_element.id).play();
     document.getElementById("display").innerHTML = audio_element.name;
@@ -81,7 +82,7 @@ class AudioContextProvider extends Component {
 
   render() {
     return (
-      <AudioContext.Provider value={{...this.state, playAudio: this.playAudio}}>
+      <AudioContext.Provider value={{ ...this.state, playAudio: this.playAudio }}>
         {this.props.children}
       </AudioContext.Provider>
     );
