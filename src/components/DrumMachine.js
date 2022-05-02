@@ -3,6 +3,7 @@ import AudioContextProvider from '../contexts/AudioContext';
 import Display from './Display';
 import DrumKeyboard from './DrumKeyboard';
 import DrumMap from './DrumMap';
+import KeyboardListener from './KeyboardControls';
 
 class DrumMachine extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class DrumMachine extends Component {
       <div id="drum-machine">
         <AudioContextProvider>
           <Display />
+          <KeyboardListener />
           <DrumMap playAudio={this.playAudio} />
           <DrumKeyboard playAudio={this.playAudio} />
         </AudioContextProvider>
