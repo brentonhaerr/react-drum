@@ -20,12 +20,6 @@ const KeyboardListener = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-
-  return (
-
-    <div onKeyDown={handleKeyDown}>Keyboard Listener.</div>
-
-  );
 }
 
 export default KeyboardListener;
