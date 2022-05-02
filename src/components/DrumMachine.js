@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AudioContextProvider from '../contexts/AudioContext';
-import AudioPlayer from './AudioPlayer';
 import Display from './Display';
 import DrumKeyboard from './DrumKeyboard';
 import DrumMap from './DrumMap';
@@ -49,7 +48,6 @@ class DrumMachine extends Component {
       <div id="drum-machine">
         <AudioContextProvider>
           <Display />
-          <AudioPlayer playAudio={this.playAudio} />
           <DrumMap playAudio={this.playAudio} />
           <DrumKeyboard playAudio={this.playAudio} />
         </AudioContextProvider>

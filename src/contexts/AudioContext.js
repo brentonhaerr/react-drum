@@ -17,55 +17,55 @@ class AudioContextProvider extends Component {
     sounds: [
       {
         key: "Q",
-        source: { cymballight1fx },
+        source: cymballight1fx,
         id: "hihat",
         name: "Hi-hat"
       },
       {
         key: "W",
-        source: { cymballight2fx },
+        source: cymballight2fx,
         id: "cymbal1",
         name: "Cymbal 1"
       },
       {
         key: "E",
-        source: { tomhigh1fx },
+        source: tomhigh1fx,
         id: "cymbal2",
         name: "Cymbal 2"
       },
       {
         key: "D",
-        source: { tomhigh2fx },
+        source: tomhigh2fx,
         id: "cymbal3",
         name: "Cymbal 3"
       },
       {
         key: "Z",
-        source: { snarefx },
+        source: snarefx,
         id: "snare",
         name: "Snare"
       },
       {
         key: "X",
-        source: { kickfx },
+        source: kickfx,
         id: "bass",
         name: "Bass"
       },
       {
         key: "A",
-        source: { tommid1fx },
+        source: tommid1fx,
         id: "tom1",
         name: "Tom 1"
       },
       {
         key: "S",
-        source: { tommid2fx },
+        source: tommid2fx,
         id: "tom2",
         name: "Tom 2"
       },
       {
         key: "C",
-        source: { tommid1fx },
+        source: tommid1fx,
         id: "tom3",
         name: "Tom 3"
       }
@@ -75,8 +75,8 @@ class AudioContextProvider extends Component {
   playAudio = (audio_element_key) => {
     let audio_element = this.state.sounds.filter((elem) => { return elem.key == audio_element_key })[0];
     console.log("Play audio: " + audio_element.name)
-    document.getElementById(audio_element.id).load();
-    document.getElementById(audio_element.id).play();
+    document.getElementById(audio_element.key).load();
+    document.getElementById(audio_element.key).play();
     document.getElementById("display").innerHTML = audio_element.name;
   }
 
