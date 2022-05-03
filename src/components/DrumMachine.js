@@ -1,59 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AudioContextProvider from '../contexts/AudioContext';
 import Display from './Display';
 import DrumKeyboard from './DrumKeyboard';
 import DrumMap from './DrumMap';
+import KeyboardListener from './KeyboardControls';
 
-class DrumMachine extends Component {
-  constructor(props) {
-    super(props);
-    this.playAudio = this.playAudio.bind(this);
-  }
-
-  getAudioElement = (key_pad) => {
-    switch (key_pad) {
-      case "Q":
-        return "tom_high_1";
-      case "W":
-        return "tom_high_2";
-      case "E":
-        return "cymbal_1";
-      case "A":
-        return "cymbal_2";
-      case "S":
-        return "kick";
-      case "D":
-        return "snare";
-      case "Z":
-        return "tom_mid_1";
-      case "X":
-        return "tom_mid_2";
-      case "C":
-        return "";
-      default:
-        console.log("Invalid key played");
-        return "tom_high_1";
-    }
-  }
-
-  playAudio = (key_pad) => {
-    let audio_element_id = this.getAudioElement(key_pad);
-    document.getElementById(audio_element_id).load();
-    document.getElementById(audio_element_id).play();
-  }
-
-  state = {}
-  render() {
-    return (
-      <div id="drum-machine">
-        <AudioContextProvider>
-          <Display />
-          <DrumMap playAudio={this.playAudio} />
-          <DrumKeyboard playAudio={this.playAudio} />
-        </AudioContextProvider>
-      </div>
-    );
-  }
+const DrumMachine = () => {
+  return (
+    <div id="drum-machine">
+      <AudioContextProvider>
+        <Display />
+        <KeyboardListener />
+        <DrumMap />
+        <DrumKeyboard />
+      </AudioContextProvider>
+    </div>
+  );
 }
 
 export default DrumMachine;

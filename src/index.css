@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.drum-pad {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 3em;
+}
