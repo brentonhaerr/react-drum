@@ -9,9 +9,9 @@ const DrumMachine = () => {
   return (
     <div id="drum-machine">
       <AudioContextProvider>
-        <Display />
         <KeyboardListener />
         <DrumMap />
+        <Display />
         <DrumKeyboard />
       </AudioContextProvider>
     </div>
