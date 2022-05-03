@@ -35,6 +35,18 @@ class AudioContextProvider extends Component {
         name: "Cymbal 2"
       },
       {
+        key: "A",
+        source: tom1,
+        id: "tom1",
+        name: "Tom 1"
+      },
+      {
+        key: "S",
+        source: tom2,
+        id: "tom2",
+        name: "Tom 2"
+      },
+      {
         key: "D",
         source: hat4,
         id: "cymbal3",
@@ -52,18 +64,7 @@ class AudioContextProvider extends Component {
         id: "bass",
         name: "Bass"
       },
-      {
-        key: "A",
-        source: tom1,
-        id: "tom1",
-        name: "Tom 1"
-      },
-      {
-        key: "S",
-        source: tom2,
-        id: "tom2",
-        name: "Tom 2"
-      },
+
       {
         key: "C",
         source: tom3,
@@ -85,7 +86,7 @@ class AudioContextProvider extends Component {
     return (
       this.state.sounds.map(sound => {
         return (
-          <button key={sound.key+"-key"} id={sound.key+"-button"} className="drum-pad btn btn-secondary m-1 fw-bold fs-5" onClick={() => { this.playAudio(sound.key) }}>
+          <button key={sound.key + "-key"} id={sound.key + "-button"} className="drum-pad btn btn-secondary m-1 fw-bold fs-5" onClick={() => { this.playAudio(sound.key) }}>
             {sound.key}
             <audio id={sound.key} className="clip" src={sound.source}></audio>
           </button>

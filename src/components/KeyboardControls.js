@@ -1,16 +1,13 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { AudioContext } from '../contexts/AudioContext';
 
 const KeyboardListener = () => {
-  const [keys, setKeys] = useState([]);
   const { playAudio } = useContext(AudioContext)
   
   const handleKeyDown = (event) => {
     const { key } = event;
     let audio_key = key.toUpperCase();
     playAudio(audio_key);
-    
-
   }
 
   useEffect(() => {
