@@ -1,8 +1,8 @@
 import React, { Component, createContext } from 'react';
 
 // Audio Clips
-import tom1 from '../assets/tom-high-1.mp3';
-import tom2 from '../assets/tom-high-2.mp3';
+import tom1 from '../assets/Perc-Tomtom.mp3';
+import tom2 from '../assets/Clap.mp3';
 import tom3 from '../assets/Perc-Kung-Fu.mp3';
 import hat1 from '../assets/Hats1.mp3';
 import hat2 from '../assets/Hats2.mp3';
