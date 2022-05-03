@@ -85,7 +85,7 @@ class AudioContextProvider extends Component {
     return (
       this.state.sounds.map(sound => {
         return (
-          <button key={sound.key+"-key"} id={sound.key+"-button"} className="drum-pad btn btn-secondary mx-1" onClick={() => { this.playAudio(sound.key) }}>
+          <button key={sound.key+"-key"} id={sound.key+"-button"} className="drum-pad btn btn-secondary m-1 fw-bold fs-5" onClick={() => { this.playAudio(sound.key) }}>
             {sound.key}
             <audio id={sound.key} className="clip" src={sound.source}></audio>
           </button>
