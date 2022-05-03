@@ -74,7 +74,7 @@ class AudioContextProvider extends Component {
   }
 
   playAudio = (audio_element_key) => {
-    let audio_element = this.state.sounds.filter((elem) => { return elem.key == audio_element_key })[0];
+    let audio_element = this.state.sounds.filter((elem) => { return elem.key === audio_element_key })[0];
     console.log("Play audio: " + audio_element.name)
     document.getElementById(audio_element.key).load();
     document.getElementById(audio_element.key).play();
